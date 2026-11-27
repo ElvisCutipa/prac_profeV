@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proponer evento | EventosUSFA</title><link rel="stylesheet" href="estilos.css"></head>
+<body>
+<header class="encabezado"><div class="contenedor barra"><h2>Eventos USFA</h2>
+<nav><a href="index.html">Catálogo</a><a href="proponer.html" class="activo">Proponer evento</a></nav></div></header>
+<main class="contenedor contenido">
+<section class="presentacion"><h1>Proponer un evento</h1><p>Completa el formulario para compartir tu propuesta con la comunidad universitaria.</p></section>
+<section class="formulario-contenedor"><form id="formEvento">
+<h2>Información del organizador</h2>
+<div class="grupo"><label for="nombre">Nombre completo</label><input type="text" id="nombre" placeholder="Ingresa tu nombre" required></div>
+<div class="grupo"><label for="correo">Correo electrónico</label><input type="email" id="correo" placeholder="ejemplo@correo.com" required></div>
+<div class="grupo"><label for="telefono">Número de teléfono</label><input type="tel" id="telefono" placeholder="Ingresa tu teléfono" required></div>
+<h2>Información del evento</h2>
+<div class="grupo"><label for="titulo">Nombre del evento</label><input type="text" id="titulo" placeholder="Ej. Feria de tecnología" required></div>
+<div class="grupo"><label for="categoria">Categoría del evento</label><select id="categoria" required><option value="">Selecciona una categoría</option><option>Tecnología</option><option>Educación</option><option>Cultura</option><option>Deportes</option><option>Otros</option></select></div>
+<div class="grupo"><label for="descripcion">Descripción del evento</label><textarea id="descripcion" rows="5" placeholder="Describe de qué trata tu evento..." required></textarea></div>
+<div class="grupo"><label for="fecha">Fecha del evento</label><input type="date" id="fecha" required></div>
+<div class="grupo"><label for="lugar">Lugar del evento</label><input type="text" id="lugar" placeholder="Ej. Auditorio USFA" required></div>
+<div class="grupo"><label for="participantes">Cantidad aproximada de participantes</label><input type="number" id="participantes" min="1" placeholder="Ej. 50" required></div>
+<div class="grupo"><label for="observaciones">Observaciones adicionales</label><textarea id="observaciones" rows="3" placeholder="Información adicional (opcional)"></textarea></div>
+<div class="acciones"><button type="submit" class="boton">Enviar propuesta</button><a href="index.html" class="boton-secundario">Cancelar</a></div>
+<div id="mensaje" aria-live="polite"></div>
+</form></section></main>
+<footer><p>EventosUSFA © 2026 | Prototipo académico</p></footer>
+<script src="script.js"></script></body></html>

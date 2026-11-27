@@ -1,0 +1,414 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y RESET
+   ========================================================================== */
+
+/* Elimina márgenes y rellenos por defecto, y hace que el padding no afecte el tamaño final */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos base de toda la página (fuente, color de fondo, color de texto e interlineado) */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  color: #263238;
+  line-height: 1.6;
+}
+
+/* Contenedor principal para centrar el contenido y limitar su ancho máximo */
+.contenedor {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+
+/* Barra superior azul oscuro con texto blanco */
+.encabezado {
+  background: #0b0f13;
+  color: white;
+  padding: 18px 0;
+}
+
+/* Alinea el título/logo a la izquierda y el menú a la derecha */
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.barra h2 {
+  font-size: 23px;
+}
+
+/* Contenedor de los enlaces de navegación */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+/* Estilo de los enlaces del menú con transición suave */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse o cuando la página está activa */
+nav a:hover,
+nav a.activo {
+  color: #a9d7ff;
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   3. SECCIÓN PRINCIPAL Y PRESENTACIÓN
+   ========================================================================== */
+
+/* Espaciado superior e inferior del cuerpo principal */
+.contenido {
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+
+/* Bloque de bienvenida o título de la sección */
+.presentacion {
+  margin-bottom: 30px;
+}
+
+.presentacion h1 {
+  font-size: 32px;
+  color: #020202;
+  margin-bottom: 10px;
+}
+
+.presentacion p {
+  color: #687782;
+}
+
+
+/* ==========================================================================
+   4. CUADRÍCULA Y TARJETAS DE EVENTOS
+   ========================================================================== */
+
+/* Cuadrícula de 2 columnas iguales para mostrar los eventos */
+.eventos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* Diseño de cada tarjeta individual */
+.tarjeta {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden; /* Recorta lo que sobresalga de los bordes redondeados */
+  border: 1px solid #e1e6eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+/* Efecto de elevación al pasar el cursor sobre la tarjeta */
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Área superior de la tarjeta donde va el ícono o emoji del evento */
+.imagen-evento {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+}
+
+/* Colores de fondo según la categoría del evento */
+.tecnologia {
+  background: #dceeff;
+}
+
+.desarrollo {
+  background: #e4e4ff;
+}
+
+/* Contenedor de los textos dentro de la tarjeta */
+.informacion {
+  padding: 22px;
+}
+
+/* Etiqueta tipo píldora para la categoría */
+.categoria {
+  display: inline-block;
+  background: #e4eff8;
+  color: #174d76;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.informacion h2 {
+  margin: 12px 0;
+  color: #080a0b;
+}
+
+.informacion p {
+  margin-bottom: 10px;
+  color: #667580;
+}
+
+/* Tamaño de letra más pequeño para fecha y ubicación */
+.fecha,
+.lugar {
+  font-size: 14px;
+}
+
+/* Enlace "Ver más" dentro de la tarjeta */
+.enlace {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0e1112;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   5. BLOQUE DE MENSAJE Y BOTONES
+   ========================================================================== */
+
+/* Caja blanca centrada para llamadas a la acción o avisos */
+.mensaje {
+  margin-top: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mensaje h2 {
+  color: #030304;
+  margin-bottom: 10px;
+}
+
+.mensaje p {
+  margin-bottom: 20px;
+}
+
+/* Botón principal azul */
+.boton {
+  display: inline-block;
+  background: #06090a;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: #0a0e10;
+}
+
+/* Botón secundario gris claro */
+.boton-secundario {
+  display: inline-block;
+  background: #e7ebef;
+  color: #263238;
+  padding: 12px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+
+/* ==========================================================================
+   6. FORMULARIOS Y ALERTAS
+   ========================================================================== */
+
+/* Contenedor principal del formulario */
+.formulario-contenedor {
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Subtítulos dentro del formulario con línea inferior */
+.formulario-contenedor h2 {
+  color: #08090a;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5edf3;
+}
+
+/* Espaciado entre cada campo del formulario */
+.grupo {
+  margin-bottom: 20px;
+}
+
+.grupo label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+/* Estilo unificado para cajas de texto, listas desplegables y áreas de texto */
+.grupo input,
+.grupo select,
+.grupo textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd5dd;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+/* Resalta el borde del campo cuando el usuario hace clic en él */
+.grupo input:focus,
+.grupo select:focus,
+.grupo textarea:focus {
+  border-color: #060708;
+  box-shadow: 0 0 0 2px rgba(23, 108, 165, 0.12);
+}
+
+/* Permite redimensionar el textarea solo hacia arriba/abajo */
+.grupo textarea {
+  resize: vertical;
+}
+
+/* Contenedor para alinear los botones del formulario */
+.acciones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+/* Contenedor para mensajes dinámicos (ej. con JavaScript) */
+#mensaje {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Alerta verde de confirmación */
+.exito {
+  background: #e0f5e8;
+  color: #176b39;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+
+/* ==========================================================================
+   7. PÁGINA DE DETALLE DEL EVENTO
+   ========================================================================== */
+
+/* Tarjeta grande para ver la información completa de un evento */
+.detalle-tarjeta {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Cabecera con ícono gigante en la vista de detalle */
+.detalle-imagen {
+  background: #dceeff;
+  padding: 45px;
+  text-align: center;
+  font-size: 85px;
+}
+
+.detalle-info {
+  padding: 35px;
+}
+
+.detalle-info h1 {
+  color: #111416;
+  margin: 15px 0;
+}
+
+.detalle-info p {
+  margin-bottom: 15px;
+}
+
+/* Recuadro gris para destacar fecha, hora y lugar en el detalle */
+.datos-evento {
+  background: #f4f6f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+
+
+/* ==========================================================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+
+footer {
+  background: #090c0f;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+}
+
+
+/* ==========================================================================
+   9. DISEÑO RESPONSIVO (PANTALLAS MÓVILES <= 700px)
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  /* Apila el logo y el menú verticalmente */
+  .barra {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  /* Cambia las tarjetas de 2 columnas a 1 sola columna */
+  .eventos {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce tamaños de fuente y rellenos para pantallas pequeñas */
+  .presentacion h1 {
+    font-size: 26px;
+  }
+
+  .formulario-contenedor {
+    padding: 20px;
+  }
+
+  .detalle-info {
+    padding: 22px;
+  }
+}
